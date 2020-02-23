@@ -9,3 +9,11 @@
 .navbar-nav a {
   color: white;
 }
+
+.secondPage {
+  display: none;
+}
+
+.footer {
+  display: none;
+}

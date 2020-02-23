@@ -5,16 +5,35 @@
 
 struct Node
 {
-	Node* subcat = nullptr;
-	Node* parentcat = nullptr;
-	Lecture  
+	// vector of subcategories
+	std::vector<Node*> subcat;
+	// node back up to the parent category
+	Node* parent = nullptr;
+	// vector of all lectures under this category
+	// only for the leaves
+	std::vector<Lecture*> lectures;
 };
 
-class category
+class Category
 {
-public:
 private:
-	Node* top;
+	Node* root;
+	void copyCategory(Node*& thisRoot, Node* sourceRoot);
+	void clearCategory(Node* thisRoot);
+public:
+	// default constructor
+	Category() : root(nullptr) {};
+
+	// copy constructor
+	Category(const Category& rhs);
+
+	// assignment operator
+	const Category& operator=(const Category& rhs);
+
+	void add(Lecture* lecture);
+
+	// destructor
+	~Category();
 };
 
 #endif

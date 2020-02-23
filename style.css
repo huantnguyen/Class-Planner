@@ -10,10 +10,22 @@
   color: white;
 }
 
+.firstPage {
+  display: none;
+}
+
 .secondPage {
   display: none;
 }
 
 .footer {
   display: none;
+}
+
+.table th {
+  text-align: center;
+}
+
+.stupid {
+  color: white;
 }

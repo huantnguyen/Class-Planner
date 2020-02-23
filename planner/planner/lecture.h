@@ -26,8 +26,6 @@ private:
 	std::string m_lecturer;
 	std::string m_title;
 
-	// 1st is beginning time
-	// 
 	struct schedule {
 		std::string m_time;
 		std::string m_location;

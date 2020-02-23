@@ -22,9 +22,7 @@ int main()
 			Lec1.setLength(day, 1.5);
 			break;
 		case WEDNESDAY:
-			Lec1.setTime(day, "4:00pm");
-			Lec1.setLocation(day, "Boelter Hall 3464");
-			Lec1.setLength(day, 1.5);
+			Lec1.setSchedule(day, "4:00pm", "Boelter Hall 3464", 1.5);
 			break;
 		case FRIDAY:
 			Lec1.setTime(day, "4:00pm");

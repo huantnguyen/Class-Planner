@@ -2,10 +2,21 @@
 #include <iomanip>
 #include <string>
 #include "lecture.h"
+#include "json.hpp"
+#include <fstream>
+
 using namespace std;
 
 int main()
 {
+	std::ifstream ifs;
+	ifs.open("courses.JSON");
+	auto courses = nlohmann::json::parse(ifs);
+	ifs.close();
+
+	string s = courses[0]["major"];
+	cout << s << endl;
+
 	Lecture Lec1;
 
 	// Initialize CS35L Lecture

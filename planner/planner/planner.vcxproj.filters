@@ -18,6 +18,9 @@
     <ClInclude Include="lecture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="category.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -26,5 +29,11 @@
     <ClCompile Include="lecture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="category.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="courses.json" />
   </ItemGroup>
 </Project>

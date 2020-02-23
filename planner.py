@@ -1,9 +1,9 @@
 import json
+#from flask import Flask, escape, request
 
 with open("courses.json") as file:
     json_data = file.read()
 data = json.loads(json_data)
 
-print(data[0]["major"])
-
-print("hello world")
+for i in data[:]:
+    print(i["courseNum"])

@@ -49,7 +49,7 @@
           <p>Welcome to the one-stop counselor for planning your UCLA graduation plan! Choose your major and year below, and we'll help you get started!</p>
         </div>
 
-        <div class="col-sm-11 text-center">
+        <div class="col-sm-12 text-center">
         <h4>Major</h4>
         <div class="dropdown">
           <button class="dropbtn" id="majorButton" required>Choose a Major</button>
@@ -69,7 +69,7 @@
          </div>
         </div>
         <br/><br/>
-        <button class="btn enter" onclick="nextPage()">Enter</button>
+        <button class="btn enter" onclick="nextPage(); addOptions();">Enter</button>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
         </div> 
@@ -84,6 +84,18 @@
         <ul class="dropdown-menu">
           <li><a href="#">Statistics</a></li>
         </ul>
+      </div>
+    </div>
+
+    <div class="container fourthPage" id="fourthPage">
+      <h2>GRAD-PLAN</h2>
+      <div class="container">
+        <h2>Select the classes you have already taken.</h2>
+        <form>
+          <select id="prereq" name="prereq" size="4" multiple>
+          </select><br><br>
+          <button class="btn enter" type="button" onclick="nextPage2(); ">Enter</button>
+        </form>
       </div>
     </div>
 

@@ -18,6 +18,10 @@
   display: none;
 }
 
+.fourthPage{
+  display: none;
+}
+
 .footer {
   display: none;
 }
@@ -30,6 +34,11 @@
   color: white;
 }
 
+
+/*FIRST PAGE CSS*/
+h1 {
+  font-size: 200pt;
+}
 
 /* This is the code for the dropdown menu for majors on the first page.
  */

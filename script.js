@@ -5,7 +5,7 @@ function testFunction(clicked_id) {
 
 function nextPage() {
 	document.getElementById('secondPage').style.display='none';
-	document.getElementById('thirdPage').style.display='block';
+	document.getElementById('fourthPage').style.display='block';
 }
 
 
@@ -32,3 +32,17 @@ function readFile(file)
 
 readFile('statsprereq.txt');
 
+function addOptions()
+{
+  let prereqs = ["Chem 20A", "Chem20B"];
+  for (i=0; i<prereqs.length; i++)
+  {
+    var now = prereqs[i];
+    $('#prereq').append(`<option value="${now}">${now}</option>`);
+  }
+}
+
+function nextPage2() {
+	document.getElementById('fourthPage').style.display='none';
+	document.getElementById('thirdPage').style.display='block';
+}

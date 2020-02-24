@@ -2,6 +2,7 @@ import json
 import re
 from flask import Flask, escape, request, jsonify
 from flask_cors import CORS
+import random
 
 # parse json
 with open("courses.json") as file:
@@ -89,21 +90,24 @@ def recommend_schedule():
 #    yr = 17
     class_to_be_taken.sort()
     majorDone = False
+    pos = random.sample(range(len(ge)), 10)
     count = 0
-    for i in range(12):
+
+    for j in range(3):
         if not majorDone:
-            for j in range(3):
+            for i in range(12):
                 if count < len(class_to_be_taken):
                     schedule[i][j] = class_to_be_taken[count]
                     count += 1
                 else:
                     majorDone = True
                     count = 0
+                    i -= 1
                     break
         else:
-            for j in range(3):
+            for i in range(12):
                 if count < 10:
-                    schedule[i][j] = ge[count]
+                    schedule[i][j] = ge[pos[count]]
                     count += 1
                 else:
                     break

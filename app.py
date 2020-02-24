@@ -9,8 +9,9 @@ with open("courses.json") as file:
 data = json.loads(json_data)
 
 # class categories
-lowerdiv = []
-upperdiv = []
+# lowerdiv = []
+# upperdiv = []
+major = []
 ge = []
 
 # list of classes taken
@@ -25,57 +26,18 @@ major_reqs = { "STATS 10", "STATS 12", "STATS 13", "STATS 20", "ECON 41", "PSYCH
 # list of non GE majors
 # other_majors = { "COM SCI", "STATS", "MATH" }
 
-for i in data:
-    # get course num, strip anything after -
-    course_title = i["courseNum"]
-    course_title = course_title.split('-')[0]
+isMajor = False
 
-    # if class already taken, skip
-    if course_title in class_taken:
-        continue
-
-    # get course number and convert to int (skip if not available)
-    course_num = course_title.split(' ')[-1]
-    course_num = re.sub("\D", "", course_num)
-    if course_num != '':
-        course_num = int(course_num)
-    else:
-        continue
-    
-    # get course major, professor, and title
-    course_major = i["major"]
-    course_prof  = i["professor"]
-    course_name  = i["courseTitle"]
-
-    # get quarter (skip if not available)
-    if "quarter" in i:
-        course_quarter = i["quarter"]
-    else:
-        continue
-
-    # split quarter into season and year
-    course_season = course_quarter[:2]
-    course_year = course_quarter[-1]
-    if course_season == 'F':
-        course_season = 0
-    elif course_season == 'W':
-        course_season = 1
-    elif course_season == 'S':
-        course_season = 2
-    else:
-        continue
-
-    # ignore classes from 2016-2017 year
-    if course_year == '16' or course_quarter == "17S":
-        continue
-
-    if course_title in major_reqs:
-        if course_num < 100:
-            lowerdiv.append(i)
+for i in data[:]:
+        for j in major_reqs:
+            if j == i["courseNum"][0:len(i["courseNum"])-2]:
+                isMajor = True
+        if isMajor:
+            major.append(i)
         else:
-            upperdiv.append(i)
-    else:
-        ge.append(i)
+            if i["courseNum"].split('-')[0] not in ge:
+                ge.append(i["courseNum"].split('-')[0])
+        isMajor = False
 
 app = Flask(__name__)
 CORS(app)
@@ -141,7 +103,7 @@ def recommend_schedule():
         else:
             for j in range(3):
                 if count < 10:
-                    schedule[i][j] = class_to_be_taken[count]
+                    schedule[i][j] = ge[count]
                     count += 1
                 else:
                     break

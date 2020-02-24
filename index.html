@@ -37,7 +37,7 @@
     </nav>
 
 
-    <div class="container-fluid text-center secondPage">    
+    <div class="container-fluid text-center secondPage" id="secondPage">    
       <div class="row content">
         <div class="col-sm-2 sidenav">
           <p><a href="#">Prerequisite</a></p>
@@ -45,20 +45,34 @@
           <p><a href="#">GE</a></p>
         </div>
         <div class="col-sm-8 text-left"> 
-          <h1>GRAD-PLAN</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <hr>
-          <h3>Test</h3>
-          <p>Lorem ipsum...</p>
+          <h1>UCLA GRAD-PLAN</h1>
+          <p>Welcome to the one-stop counselor for planning your UCLA graduation plan! Choose your major and year below, and we'll help you get started!</p>
         </div>
-        <div class="col-sm-2 sidenav">
-          <div class="well">
-            <p>ADS</p>
-          </div>
-          <div class="well">
-            <p>ADS</p>
-          </div>
+
+        <div class="col-sm-11 text-center">
+        <h4>Major</h4>
+        <div class="dropdown">
+          <button class="dropbtn" id="majorButton" required>Choose a Major</button>
+            <div class="dropdown-content">
+              <button class="btn major" id="statistics" onclick="testFunction(this.id)">Statistics</button>
+            </div>
         </div>
+
+        <h4>Year</h4>
+        <div class="dropdown">
+          <button class="dropbtn" id="yearButton" required>Choose a Year</button>
+          <div class="dropdown-content">
+            <button class="btn year" id="freshman" onclick="testFunction(this.id)">Freshman</button>
+            <button class="btn year" id="sophomore" onclick="testFunction(this.id)">Sophomore</button>
+            <button class="btn year" id="junior" onclick="testFunction(this.id)">Junior</button>
+            <button class="btn year" id="senior" onclick="testFunction(this.id)">Senior</button>
+         </div>
+        </div>
+        <br/><br/>
+        <button class="btn enter" onclick="nextPage()">Enter</button>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        </div> 
       </div>
     </div>
 
@@ -74,18 +88,53 @@
     </div>
 
 
-    <div class="container thirdPage">
+    <div class="container thirdPage" id="thirdPage">
       <h2>GRAD-PLAN</h2>    
 
 
       <div class="container">
-        <h2>Choose Your Class by:</h2>                                        
-        <div class="dropdown btn-group">
+        <h2>Choose Your Required Class by Using the Bar on the Left:</h2>                                        
+        <!--<div class="dropdown btn-group">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Major
           <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="#">Statistics</a></li>
           </ul>
+        </div>-->
+      </div>
+
+      <div class="sidenav2">
+        <div class="dropdown2">
+          <button class="dropbtn2">Major</button>
+          <div class="dropdown2-content">
+            <a href="#">Stat 100A</a>
+            <a href="#">Stat 110</a>
+            <a href="#">Stat 100B</a>
+          </div>
+        </div>
+        <div class="dropdown2">
+          <button class="dropbtn2">Pre Major</button>
+          <div class="dropdown2-content">
+            <a href="#">Phys 76</a>
+            <a href="#">Math 32</a>
+            <a href="#">Com Sci 12</a>
+          </div>
+        </div>
+        <div class="dropdown2">
+          <button class="dropbtn2">GE</button>
+          <div class="dropdown2-content">
+            <a href="#">Geo 21</a>
+            <a href="#">Bio 23</a>
+            <a href="#">Econ 54</a>
+          </div>
+        </div>
+        <div class="dropdown2">
+          <button class="dropbtn2">Others</button>
+          <div class="dropdown2-content">
+            <a href="#">Chem 10</a>
+            <a href="#">Mus 54</a>
+            <a href="#">Pol 32</a>
+          </div>
         </div>
       </div>
 
@@ -255,8 +304,11 @@
 
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 
 
   </body>

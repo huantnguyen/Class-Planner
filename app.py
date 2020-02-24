@@ -1,6 +1,7 @@
 import json
 import re
 from flask import Flask, escape, request
+from flask_cors import CORS
 
 # parse json
 with open("courses.json") as file:
@@ -63,6 +64,7 @@ for i in data:
         ge.append(course)
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
@@ -77,6 +79,8 @@ def course_taken():
         if i not in class_taken:
             class_to_be_taken.append(i)
     return str(class_to_be_taken)
+
+
 
 '''
 print("LOWERDIVS")

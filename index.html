@@ -17,7 +17,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li class="active"><a href="#">Student</a></li>
-          <li class="active"><a href="#">FAQ</a></li>
+          <li class="active"><a href="#">Notifications</a></li>
         </ul>
         <form class="navbar-form navbar-left" action="/action_page.php">
           <div class="input-group">
@@ -44,13 +44,14 @@
           <p><a href="#">Major Requirements</a></p>
           <p><a href="#">GE</a></p>
         </div>
-        <div class="col-sm-8 text-left"> 
-          <h1>UCLA GRAD-PLAN</h1>
-          <p>Welcome to the one-stop counselor for planning your UCLA graduation plan! Choose your major and year below, and we'll help you get started!</p>
+        <div class="col-sm-16">
+          <img class="moveImage" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/University_of_California%2C_Los_Angeles_logo.png" />
+          <h1>GRAD-PLAN</h1>
+          <p><b>Welcome to the one-stop counselor for planning your UCLA graduation plan! Choose your major and year below, and we'll help you get started!</b></p>
         </div>
 
         <div class="col-sm-12 text-center">
-        <h4>Major</h4>
+        <h2><b>Major</b></h2>
         <div class="dropdown">
           <button class="dropbtn" id="majorButton" required>Choose a Major</button>
             <div class="dropdown-content">
@@ -58,7 +59,7 @@
             </div>
         </div>
 
-        <h4>Year</h4>
+        <h2><b>Year</b></h2>
         <div class="dropdown">
           <button class="dropbtn" id="yearButton" required>Choose a Year</button>
           <div class="dropdown-content">
@@ -88,13 +89,13 @@
     </div>
 
     <div class="container fourthPage" id="fourthPage">
-      <h2>GRAD-PLAN</h2>
-      <div class="container">
-        <h2>Select the classes you have already taken.</h2>
+      <h2><a class="stupid">AA</a>PREREQUISITES</h2>
+      <div class="container text-center">
+        <h2>Select the classes you have already taken.</h2><br>
         <form>
           <select id="prereq" name="prereq" size="4" multiple>
           </select><br><br>
-          <button class="btn enter" type="button" onclick="nextPage2(); ">Enter</button>
+          <button id"transfer" class="btn enter" type="button" onclick="nextPage2();getSchedule(); ">Enter</button>
         </form>
       </div>
     </div>
@@ -119,7 +120,7 @@
         <div class="dropdown2">
           <button class="dropbtn2">Major</button>
           <div class="dropdown2-content">
-            <a href="#">Stat 100A</a>
+            <a href="#" onclick="random()">Stat 100A</a>
             <a href="#">Stat 110</a>
             <a href="#">Stat 100B</a>
           </div>
@@ -127,7 +128,7 @@
         <div class="dropdown2">
           <button class="dropbtn2">Pre Major</button>
           <div class="dropdown2-content">
-            <a href="#">Phys 76</a>
+            <a href="#" onclick="random()">Phys 76</a>
             <a href="#">Math 32</a>
             <a href="#">Com Sci 12</a>
           </div>
@@ -143,7 +144,7 @@
         <div class="dropdown2">
           <button class="dropbtn2">Others</button>
           <div class="dropdown2-content">
-            <a href="#">Chem 10</a>
+            <a href="#" onclick="random2()">Chem 10</a>
             <a href="#">Mus 54</a>
             <a href="#">Pol 32</a>
           </div>
@@ -154,7 +155,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Freshman<a class="stupid">jji </a></th>
+            <th>Freshman<a class="stupid">iij </a></th>
             <th>Sophomore</th>
           </tr>
         </thead>
@@ -162,43 +163,21 @@
         <tr>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc1" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc2" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
-              </select><br><br>
-            </form>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
-                <option value="saab">Class 2</option>
-                <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
-              </select><br><br>
-            </form>
-          </td>
-          <td>
-            <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
-                <option value="saab">Class 2</option>
-                <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
@@ -206,21 +185,43 @@
         <tr>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc3" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc4" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
+              </select><br><br>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <form action="/action_page.php">
+              <select id="recc5" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
+                <option value="saab">Class 2</option>
+                <option value="saab">Class 3</option>
+                <option value="saab">Class 4</option>-->
+              </select><br><br>
+            </form>
+          </td>
+          <td>
+            <form action="/action_page.php">
+              <select id="recc6"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
+                <option value="saab">Class 2</option>
+                <option value="saab">Class 3</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
@@ -239,43 +240,21 @@
         <tr>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc7"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc8"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
-              </select><br><br>
-            </form>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
-                <option value="saab">Class 2</option>
-                <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
-              </select><br><br>
-            </form>
-          </td>
-          <td>
-            <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
-                <option value="saab">Class 2</option>
-                <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
@@ -283,21 +262,43 @@
         <tr>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc9"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>
           <td>
             <form action="/action_page.php">
-              <select id="cars" name="cars" size="4">
-                <option value="volvo">Class 1</option>
+              <select id="recc10" name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
                 <option value="saab">Class 2</option>
                 <option value="saab">Class 3</option>
-                <option value="saab">Class 4</option>
+                <option value="saab">Class 4</option>-->
+              </select><br><br>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <form action="/action_page.php">
+              <select id="recc11"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
+                <option value="saab">Class 2</option>
+                <option value="saab">Class 3</option>
+                <option value="saab">Class 4</option>-->
+              </select><br><br>
+            </form>
+          </td>
+          <td>
+            <form action="/action_page.php">
+              <select id="recc12"  name="cars" size="4">
+                <!--<option value="volvo">Class 1</option>
+                <option value="saab">Class 2</option>
+                <option value="saab">Class 3</option>
+                <option value="saab">Class 4</option>-->
               </select><br><br>
             </form>
           </td>

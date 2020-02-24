@@ -4,6 +4,7 @@
 
 .navbar-brand {
   color: #FFD100;
+  font-size: 2em !important;
 }
 
 .navbar-nav a {
@@ -32,14 +33,20 @@
 
 .stupid {
   color: white;
+  opacity: 0.001;
 }
 
 
 /*FIRST PAGE CSS*/
 h1 {
-  font-size: 200pt;
+  font-size: 7em !important;
+  font-family: "Times New Roman" !important;
 }
 
+h2 {
+  font-size: 1.5em !important;
+  text-align: center;
+}
 /* This is the code for the dropdown menu for majors on the first page.
  */
  .dropbtn {
@@ -83,14 +90,14 @@ h1 {
 }
 
 .sidenav2 {
-  width: 140px;
+  height: 95%;
+  width: 200px;
   position: fixed;
   z-index: 1;
-  top: 100px;
+  top: 50px;
   left: 10px;
-  background: #005587;
   overflow-x: hidden;
-  padding: 8px 0;
+  padding-top: 20px;
   border-radius: 5px;
 }
 
@@ -109,7 +116,8 @@ h1 {
 .dropbtn2 {
   background-color: #005587;
   color: #8BB8E8;
-  padding: 6px 8px 6px 16px;
+  width:200px;
+  padding: 6px 8px 6px 8px;
   text-decoration: none;
   font-size: 20px;
   border: none;
@@ -117,6 +125,7 @@ h1 {
 
 .dropdown2 {
   position: relative;
+  width:160px;
   display: inline-block;
 }
 
@@ -124,8 +133,9 @@ h1 {
   display: none;
   position: absolute;
   background-color: #005587;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
   z-index: 1;
 }
 
@@ -143,3 +153,39 @@ h1 {
 }
 
 .dropdown2:hover .dropdown2-content {display: block;}
+
+
+/* Update to first Page 8*/
+
+.moveImage {
+  float: left;
+  height: 100px;
+  position: relative;
+  top: 3px;
+  left: 70px;
+}
+
+.col-sm-16 h1 {
+  position: relative;
+  right:130px;
+}
+
+
+body {
+  background-image:url('https://i.postimg.cc/nhwhMFf4/2020-02-23.png');
+  background-size: 900px;
+  background-repeat: no-repeat;
+  background-position:center top;
+}
+
+
+.table-bordered {
+  width: 50%;
+  position: relative;
+  left: 60px;
+}
+
+.thirdPage h2 {
+  position: relative;
+  left: 60px;
+}

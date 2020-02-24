@@ -1,6 +1,6 @@
 import json
 import re
-#from flask import Flask, escape, request
+from flask import Flask, escape, request
 
 # parse json
 with open("courses.json") as file:
@@ -15,7 +15,6 @@ ge = []
 # list of classes taken
 class_taken = []
 # TODO: add list of taken classes into list
-class_taken.append("STATS 10")
 
 # list of major requirements
 major_reqs = { "STATS 10", "STATS 12", "STATS 13", "STATS 20", "ECON 41", "PSYCH 100A", "MATH 31A", "MATH 31B",
@@ -63,14 +62,34 @@ for i in data:
     elif course_major not in other_majors:
         ge.append(course)
 
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    print(request.args.get("name"))
+    return '1'
+
+@app.route('/taken')
+def course_taken():
+    class_taken.append(request.args.get("course_taken"))
+    class_to_be_taken = []
+    for i in major_reqs:
+        if i not in class_taken:
+            class_to_be_taken.append(i)
+    return str(class_to_be_taken)
+
+'''
 print("LOWERDIVS")
 for i in lowerdiv:
     print(i)
 print("UPPERDIVS")
 for i in upperdiv:
     print(i)
-'''
+
 print("GES")
 for i in ge:
     print(i)
 '''
+
+if __name__ == '__main__':
+    app.run(debug=True)

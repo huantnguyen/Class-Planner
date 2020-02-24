@@ -125,21 +125,26 @@ def recommend_schedule():
                 class_to_be_taken.append(i)
 
 #    yr = 17
+    class_to_be_taken.sort()
     majorDone = False
     count = 0
     for i in range(12):
-        for j in range(4):
-            if count < len(class_to_be_taken) and not majorDone:
-                schedule[i][j] = class_to_be_taken[count]
-                count = count + 1
-            elif count == len(class_to_be_taken) and not majorDone:
-                majorDone = True
-                count = 0
-                schedule[i][j] = 'GE'
-                count = count + 1
-            elif majorDone:
-                schedule[i][j] = 'GE'
-                count = count + 1
+        if not majorDone:
+            for j in range(3):
+                if count < len(class_to_be_taken):
+                    schedule[i][j] = class_to_be_taken[count]
+                    count += 1
+                else:
+                    majorDone = True
+                    count = 0
+                    break
+        else:
+            for j in range(3):
+                if count < 10:
+                    schedule[i][j] = class_to_be_taken[count]
+                    count += 1
+                else:
+                    break
     return jsonify({"data": schedule})
 
 

@@ -52,6 +52,22 @@ for i in data:
     else:
         continue
 
+    # split quarter into season and year
+    course_season = course_quarter[:2]
+    course_year = course_quarter[-1]
+    if course_season == 'F':
+        course_season = 0
+    elif course_season == 'W':
+        course_season = 1
+    elif course_season == 'S':
+        course_season = 2
+    else:
+        continue
+
+    # ignore classes from 2016-2017 year
+    if course_season == 'F' or course_quarter == "17S":
+        continue
+
     # create course string with course number, title, professor, and quarter
     course = course_title + "|" + course_name + "|" + course_prof + "|" + course_quarter
 
